@@ -1,15 +1,15 @@
 <template>
-  <div id="app">
-    <router-view/>
+  <div class="swiper">
+    swiper
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'Swiper'
 }
 </script>
 
-<style>
+<style scoped>
 
 </style>
