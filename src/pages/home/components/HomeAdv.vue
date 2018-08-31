@@ -23,6 +23,11 @@ export default {
     display flex
     .item
       width 50%
+      height 0
+      padding 0 .25rem
+      padding-bottom 18.67%
+      background #fff
+      overflow hidden
       .item-image
         width 100%
 </style>
