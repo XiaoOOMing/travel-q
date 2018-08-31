@@ -23,7 +23,8 @@ html {
 
 body {
   margin: 0;
-  font-size: .32rem;
+  font-size: .28rem;
+  background: #f5f5f5;
 }
 
 /**
