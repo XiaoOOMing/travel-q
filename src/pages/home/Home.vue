@@ -5,6 +5,7 @@
     <home-icons></home-icons>
     <home-adv></home-adv>
     <home-rank></home-rank>
+    <home-recommend></home-recommend>
   </div>
 </template>
 
@@ -14,6 +15,7 @@ import HomeSwiper from './components/Swiper'
 import HomeIcons from './components/HomeIcons'
 import HomeAdv from './components/HomeAdv'
 import HomeRank from './components/HomeRank'
+import HomeRecommend from './components/HomeRecommend'
 
 export default {
   name: 'Home',
@@ -22,7 +24,8 @@ export default {
     HomeSwiper,
     HomeIcons,
     HomeAdv,
-    HomeRank
+    HomeRank,
+    HomeRecommend
   }
 }
 </script>
