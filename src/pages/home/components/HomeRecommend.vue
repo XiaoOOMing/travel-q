@@ -16,6 +16,7 @@
               {{ recommend.title }}
             </div>
             <div class="p-start-wrapper">
+              <home-start :start="recommend.start"></home-start>
               <span>{{ recommend.comments }}条评论</span>
             </div>
             <div class="p-price-wrapper">
@@ -33,6 +34,8 @@
 </template>
 
 <script>
+import HomeStart from '@/common/start/CommonStart'
+
 export default {
   name: 'HomeRecommend',
   data () {
@@ -65,7 +68,7 @@ export default {
           'comments': 13214,
           'price': 70,
           'address': '密云县',
-          'start': '5',
+          'start': '4',
           'info': ''
         },
         {
@@ -80,6 +83,9 @@ export default {
         }
       ]
     }
+  },
+  components: {
+    HomeStart
   }
 }
 </script>
@@ -120,9 +126,13 @@ export default {
           font-size 0.32rem
           margin-bottom .15rem
         .p-start-wrapper
+          display flex
+          align-items center
           padding-bottom .2rem
           font-size .24rem
           color $gray
+          span
+            margin-left .2rem
         .p-price-wrapper
           color $gray
           display flex
