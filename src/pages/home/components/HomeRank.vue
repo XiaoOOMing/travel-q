@@ -88,6 +88,7 @@ export default {
   .home-rank
     margin-top $marginTop
     background #fff
+    padding-bottom .2rem
   .title-info
     display flex
     justify-content space-between
