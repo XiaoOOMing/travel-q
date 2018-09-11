@@ -6,6 +6,7 @@
     <home-adv></home-adv>
     <home-rank></home-rank>
     <home-recommend></home-recommend>
+    <home-weekend></home-weekend>
   </div>
 </template>
 
@@ -16,6 +17,7 @@ import HomeIcons from './components/HomeIcons'
 import HomeAdv from './components/HomeAdv'
 import HomeRank from './components/HomeRank'
 import HomeRecommend from './components/HomeRecommend'
+import HomeWeekend from './components/HomeWeekend'
 
 export default {
   name: 'Home',
@@ -25,7 +27,8 @@ export default {
     HomeIcons,
     HomeAdv,
     HomeRank,
-    HomeRecommend
+    HomeRecommend,
+    HomeWeekend
   }
 }
 </script>

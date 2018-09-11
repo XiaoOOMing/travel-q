@@ -30,6 +30,7 @@
           </div>
         </div>
       </div>
+      <div class="more">查看所有产品</div>
     </div>
 </template>
 
@@ -151,4 +152,8 @@ export default {
         background #fff9f9
         font-size .24rem
         margin-top .48rem
+  .more
+    text-align center
+    line-height .8rem
+    color $bgColor
 </style>
