@@ -17,6 +17,7 @@ export default {
     background $bgColor
     text-align center
     position relative
+    height $topHeigth
     line-height $topHeigth
     color #fff
     .back
