@@ -7,10 +7,12 @@
       <i class="iconfont">&#xe632;</i>
       输入城市/景点/游玩主题
     </div>
-    <div class="header-right">
-      北京
-      <i class="iconfont">&#xe64a;</i>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        北京
+        <i class="iconfont">&#xe64a;</i>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -37,6 +39,8 @@ export default {
         font-weight bold
     .header-right
       padding 0 .2rem
+      color #fff
+      text-decoration none
       .iconfont
         display inline-block
         font-size .24rem
