@@ -1,6 +1,6 @@
 <template>
   <div class="city-list">
-    <div v-for="item of cityList" :key="item.id">
+    <div v-for="item of cityList" :key="item.id" :id="'anchor-' + item.alpha">
       <div class="title">{{ item.alpha }}</div>
       <div class="li-wrapper">
         <div class="lines"></div>

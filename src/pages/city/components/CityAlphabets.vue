@@ -2,7 +2,7 @@
   <div class="c-alphapets">
     <div class="title">字母排序</div>
     <div class="li-wrapper">
-      <div class="li-item" v-for="item of city_alphabets" :key="item.id">{{ item.title }}</div>
+      <a :href="'#anchor-' + item.title" class="li-item" v-for="item of city_alphabets" :key="item.id">{{ item.title }}</a>
     </div>
   </div>
 </template>
