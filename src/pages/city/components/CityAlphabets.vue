@@ -2,7 +2,7 @@
   <div class="c-alphapets">
     <div class="title">字母排序</div>
     <div class="li-wrapper">
-      <div class="li-item" v-for="(item, index) of alphabets" :key="index">{{ item }}</div>
+      <div class="li-item" v-for="item of city_alphabets" :key="item.id">{{ item.title }}</div>
     </div>
   </div>
 </template>
@@ -10,13 +10,98 @@
 <script>
 export default {
   name: 'CityAlphabets',
-  computed: {
-    alphabets () {
-      let alphabets = []
-      for (let i = 0; i < 26; i++) {
-        alphabets.push(String.fromCharCode(65 + i))
-      }
-      return alphabets
+  data () {
+    return {
+      city_alphabets: [
+        {
+          'id': 0,
+          'title': 'A'
+        },
+        {
+          'id': 1,
+          'title': 'B'
+        },
+        {
+          'id': 2,
+          'title': 'C'
+        },
+        {
+          'id': 3,
+          'title': 'D'
+        },
+        {
+          'id': 4,
+          'title': 'E'
+        },
+        {
+          'id': 5,
+          'title': 'F'
+        },
+        {
+          'id': 6,
+          'title': 'G'
+        },
+        {
+          'id': 7,
+          'title': 'H'
+        },
+        {
+          'id': 8,
+          'title': 'J'
+        },
+        {
+          'id': 9,
+          'title': 'K'
+        },
+        {
+          'id': 10,
+          'title': 'L'
+        },
+        {
+          'id': 11,
+          'title': 'M'
+        },
+        {
+          'id': 12,
+          'title': 'N'
+        },
+        {
+          'id': 13,
+          'title': 'P'
+        },
+        {
+          'id': 14,
+          'title': 'Q'
+        },
+        {
+          'id': 15,
+          'title': 'R'
+        },
+        {
+          'id': 16,
+          'title': 'S'
+        },
+        {
+          'id': 17,
+          'title': 'T'
+        },
+        {
+          'id': 18,
+          'title': 'W'
+        },
+        {
+          'id': 19,
+          'title': 'X'
+        },
+        {
+          'id': 20,
+          'title': 'Y'
+        },
+        {
+          'id': 21,
+          'title': 'Z'
+        }
+      ]
     }
   }
 }
