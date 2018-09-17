@@ -3,25 +3,79 @@
     <div class="title">热门城市</div>
     <div class="li-wrapper">
       <div class="lines"></div>
-      <div class="li-item">北京</div>
-      <div class="li-item">上海</div>
-      <div class="li-item">三亚</div>
-      <div class="li-item">香港</div>
-      <div class="li-item">杭州</div>
-      <div class="li-item">广州</div>
-      <div class="li-item">成都</div>
-      <div class="li-item">深圳</div>
-      <div class="li-item">苏州</div>
-      <div class="li-item">桂林</div>
-      <div class="li-item">西安</div>
-      <div class="li-item">厦门</div>
+      <div class="li-item"
+           v-for="item of hot_cities"
+           :key="item.id" @click="handleChangeCity(item.title)">{{ item.title }}</div>
     </div>
   </div>
 </template>
 
 <script>
+import {mapMutations} from 'vuex'
+
 export default {
-  name: 'CityHotCity'
+  name: 'CityHotCity',
+  data () {
+    return {
+      hot_cities: [
+        {
+          'id': 0,
+          'title': '北京'
+        },
+        {
+          'id': 1,
+          'title': '上海'
+        },
+        {
+          'id': 2,
+          'title': '三亚'
+        },
+        {
+          'id': 3,
+          'title': '香港'
+        },
+        {
+          'id': 4,
+          'title': '杭州'
+        },
+        {
+          'id': 5,
+          'title': '广州'
+        },
+        {
+          'id': 6,
+          'title': '成都'
+        },
+        {
+          'id': 7,
+          'title': '深圳'
+        },
+        {
+          'id': 8,
+          'title': '苏州'
+        },
+        {
+          'id': 9,
+          'title': '桂林'
+        },
+        {
+          'id': 10,
+          'title': '西安'
+        },
+        {
+          'id': 11,
+          'title': '厦门'
+        }
+      ]
+    }
+  },
+  methods: {
+    handleChangeCity (name) {
+      this.changeCity(name)
+      this.$router.push('/')
+    },
+    ...mapMutations(['changeCity'])
+  }
 }
 </script>
 
@@ -46,7 +100,10 @@ export default {
         border-right 1px solid #eee
         top 0
         left calc(100% / 3)
+        z-index 1
       .li-item
+        position relative
+        z-index 9
         width calc(100% / 3)
         text-align center
         line-height $topHeigth
