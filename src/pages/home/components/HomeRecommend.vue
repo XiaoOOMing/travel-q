@@ -7,28 +7,30 @@
         </div>
       </div>
       <div class="list-wrapper">
-        <div class="item border-bottom" v-for="recommend of recommendLists" :key="recommend.id">
-          <div class="p-image-wrapper">
-            <img :src="recommend.imgUrl" class="p-image">
-          </div>
-          <div class="p-info">
-            <div class="p-title">
-              {{ recommend.title }}
+        <router-link :to="'/detail?id=' + recommend.id" v-for="recommend of recommendLists" :key="recommend.id">
+          <div class="item border-bottom">
+            <div class="p-image-wrapper">
+              <img :src="recommend.imgUrl" class="p-image">
             </div>
-            <div class="p-start-wrapper">
-              <home-start :start="recommend.score"></home-start>
-              <span>{{ recommend.comment }}条评论</span>
-            </div>
-            <div class="p-price-wrapper">
+            <div class="p-info">
+              <div class="p-title">
+                {{ recommend.title }}
+              </div>
+              <div class="p-start-wrapper">
+                <home-start :start="recommend.score"></home-start>
+                <span>{{ recommend.comment }}条评论</span>
+              </div>
+              <div class="p-price-wrapper">
               <span class="p-price">
                 <span class="orange">￥<span class="price">{{ recommend.price }}</span></span>
                 起
               </span>
-              <span class="address">{{ recommend.address }}</span>
+                <span class="address">{{ recommend.address }}</span>
+              </div>
+              <div v-if="recommend.info !== ''" class="hot-info">{{ recommend.info }}</div>
             </div>
-            <div v-if="recommend.info !== ''" class="hot-info">{{ recommend.info }}</div>
           </div>
-        </div>
+        </router-link>
       </div>
       <div class="more">查看所有产品</div>
     </div>
@@ -80,6 +82,7 @@ export default {
         flex 1
         padding-left .2rem
         .p-title
+          color #444
           padding .2rem 0
           font-size 0.32rem
           margin-bottom .15rem
