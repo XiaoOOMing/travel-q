@@ -12,13 +12,13 @@
     </div>
     <div class="ranks">
       <ul class="rank-container">
-        <li class="rank-item" v-for="(item, index) of hot_sale" :key="item.id">
+        <router-link tag="li" :to="'/detail?id=' + item.id" class="rank-item" v-for="(item, index) of hot_sale" :key="item.id">
           <img :src="item.imgUrl" class="rank-image">
           <div class="title">{{ item.title }}</div>
           <div class="title">
             <span class="orange">￥{{ item.price }}</span>起</div>
           <div class="rank-number" v-html="medal(index)"></div>
-        </li>
+        </router-link>
       </ul>
     </div>
   </div>
