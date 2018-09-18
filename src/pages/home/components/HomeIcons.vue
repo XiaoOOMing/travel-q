@@ -30,63 +30,14 @@
 <script>
 export default {
   name: 'HomeIcons',
+  props: {
+    iconLists: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination'
-      },
-      iconLists: [
-        {
-          id: '0001',
-          title: '景点门票',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png'
-        },
-        {
-          id: '0002',
-          title: '北京必游',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png'
-        },
-        {
-          id: '0003',
-          title: '夏日玩水',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/6a/45f595250c73d102.png'
-        },
-        {
-          id: '0004',
-          title: '文化古迹',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/20/831d62d2e1c7be02.png'
-        },
-        {
-          id: '0005',
-          title: '动植物园',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png'
-        },
-        {
-          id: '0006',
-          title: '故宫',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/6c/9e54a8540fee0102.png'
-        },
-        {
-          id: '0007',
-          title: '一日游',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1804/5a/13ceb38dcf262f02.png'
-        },
-        {
-          id: '0008',
-          title: '国家宝藏',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1808/8d/747c9a29b8dba402.png'
-        },
-        {
-          id: '0009',
-          title: '游乐场',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/95/8246f27355943202.png'
-        },
-        {
-          id: '0010',
-          title: '全部玩乐',
-          imgUrl: 'http://img1.qunarzz.com/piao/fusion/1803/80/416c6ab3368d1f02.png'
-        }
-      ]
+      }
     }
   },
   computed: {

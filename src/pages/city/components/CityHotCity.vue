@@ -15,59 +15,8 @@ import {mapMutations} from 'vuex'
 
 export default {
   name: 'CityHotCity',
-  data () {
-    return {
-      hot_cities: [
-        {
-          'id': 0,
-          'title': '北京'
-        },
-        {
-          'id': 1,
-          'title': '上海'
-        },
-        {
-          'id': 2,
-          'title': '三亚'
-        },
-        {
-          'id': 3,
-          'title': '香港'
-        },
-        {
-          'id': 4,
-          'title': '杭州'
-        },
-        {
-          'id': 5,
-          'title': '广州'
-        },
-        {
-          'id': 6,
-          'title': '成都'
-        },
-        {
-          'id': 7,
-          'title': '深圳'
-        },
-        {
-          'id': 8,
-          'title': '苏州'
-        },
-        {
-          'id': 9,
-          'title': '桂林'
-        },
-        {
-          'id': 10,
-          'title': '西安'
-        },
-        {
-          'id': 11,
-          'title': '厦门'
-        }
-      ]
-    }
+  props: {
+    hot_cities: Array
   },
   methods: {
     handleChangeCity (name) {

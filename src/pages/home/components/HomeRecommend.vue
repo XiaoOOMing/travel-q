@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="list-wrapper">
-        <div class="item border-bottom" v-for="recommend of recommendList" :key="recommend.id">
+        <div class="item border-bottom" v-for="recommend of recommendLists" :key="recommend.id">
           <div class="p-image-wrapper">
             <img :src="recommend.imgUrl" class="p-image">
           </div>
@@ -16,8 +16,8 @@
               {{ recommend.title }}
             </div>
             <div class="p-start-wrapper">
-              <home-start :start="recommend.start"></home-start>
-              <span>{{ recommend.comments }}条评论</span>
+              <home-start :start="recommend.score"></home-start>
+              <span>{{ recommend.comment }}条评论</span>
             </div>
             <div class="p-price-wrapper">
               <span class="p-price">
@@ -39,51 +39,8 @@ import HomeStart from '@/common/start/CommonStart'
 
 export default {
   name: 'HomeRecommend',
-  data () {
-    return {
-      recommendList: [
-        {
-          'id': '0001',
-          'title': '北京欢乐谷',
-          'imgUrl': 'http://img1.qunarzz.com/sight/p0/1508/89/895a1b7add84f23faca053ce9e3153db.water.jpg_200x200_99ae30ee.jpg',
-          'comments': 2016487,
-          'price': 59.9,
-          'address': '东城区',
-          'start': '5',
-          'info': '👍小伙伴们都收藏了，去看看吧~'
-        },
-        {
-          'id': '0002',
-          'title': '故宫',
-          'imgUrl': 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_200x200_1bc99086.jpg',
-          'comments': 287874,
-          'price': 20,
-          'address': '东城区',
-          'start': '5',
-          'info': '北京本月收藏Top5╰(￣▽￣)╭'
-        },
-        {
-          'id': '0003',
-          'title': '北京野生动物园',
-          'imgUrl': 'http://img1.qunarzz.com/sight/p0/1507/36/ce3d2d6c9ab44d67ae68d940b8781829.water.jpg_200x200_0938a8f2.jpg',
-          'comments': 13214,
-          'price': 70,
-          'address': '密云县',
-          'start': '4',
-          'info': ''
-        },
-        {
-          'id': '0004',
-          'title': '古北水镇',
-          'imgUrl': 'http://img1.qunarzz.com/sight/p0/1804/c8/c88bb5e69c9a9c5ea3.img.jpg_200x200_740720ff.jpg',
-          'comments': 7504,
-          'price': 150,
-          'address': '密云县',
-          'start': '5',
-          'info': '走进那个画中的小镇'
-        }
-      ]
-    }
+  props: {
+    recommendLists: Array
   },
   components: {
     HomeStart

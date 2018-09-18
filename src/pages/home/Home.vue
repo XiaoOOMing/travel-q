@@ -1,12 +1,12 @@
 <template>
   <div class="home">
     <home-header></home-header>
-    <home-swiper></home-swiper>
-    <home-icons></home-icons>
+    <home-swiper :swipers="swipers"></home-swiper>
+    <home-icons :iconLists="iconLists"></home-icons>
     <home-adv></home-adv>
-    <home-rank></home-rank>
-    <home-recommend></home-recommend>
-    <home-weekend></home-weekend>
+    <home-rank :hot_sale="hot_sale"></home-rank>
+    <home-recommend :recommendLists="recommendLists"></home-recommend>
+    <home-weekend :weekendList="weekendList"></home-weekend>
   </div>
 </template>
 
@@ -18,9 +18,19 @@ import HomeAdv from './components/HomeAdv'
 import HomeRank from './components/HomeRank'
 import HomeRecommend from './components/HomeRecommend'
 import HomeWeekend from './components/HomeWeekend'
+import axios from 'axios'
 
 export default {
   name: 'Home',
+  data () {
+    return {
+      swipers: [],
+      iconLists: [],
+      hot_sale: [],
+      recommendLists: [],
+      weekendList: []
+    }
+  },
   components: {
     HomeHeader,
     HomeSwiper,
@@ -29,6 +39,23 @@ export default {
     HomeRank,
     HomeRecommend,
     HomeWeekend
+  },
+  methods: {
+    getHomeInfo () {
+      axios.get('/static/api/home.json')
+        .then(this.getHomeInfoSuccess)
+    },
+    getHomeInfoSuccess (res) {
+      let data = res.data
+      this.swipers = data.swipers
+      this.iconLists = data.iconList
+      this.hot_sale = data.hot_sale
+      this.recommendLists = data.recommendLists
+      this.weekendList = data.weekendList
+    }
+  },
+  mounted () {
+    this.getHomeInfo()
   }
 }
 </script>

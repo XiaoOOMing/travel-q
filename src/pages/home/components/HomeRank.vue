@@ -12,11 +12,11 @@
     </div>
     <div class="ranks">
       <ul class="rank-container">
-        <li class="rank-item" v-for="(item, index) of rankList" :key="item.id">
+        <li class="rank-item" v-for="(item, index) of hot_sale" :key="item.id">
           <img :src="item.imgUrl" class="rank-image">
           <div class="title">{{ item.title }}</div>
           <div class="title">
-            <span class="orange">￥{{ item.min_price }}</span>起</div>
+            <span class="orange">￥{{ item.price }}</span>起</div>
           <div class="rank-number" v-html="medal(index)"></div>
         </li>
       </ul>
@@ -27,47 +27,8 @@
 <script>
 export default {
   name: 'HomeRank',
-  data () {
-    return {
-      rankList: [
-        {
-          id: '0001',
-          title: '故宫',
-          min_price: 20,
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_150x150_06cb3e52.jpg'
-        },
-        {
-          id: '0002',
-          title: '八达岭长城',
-          min_price: 40,
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1708/2b/2b3b94de99c0a425a3.img.jpg_150x150_2dec3e78.jpg'
-        },
-        {
-          id: '0003',
-          title: '八达岭长城缆车',
-          min_price: 160,
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/201306/13/bdf22f69fab0ee4ec8d65eac.jpg_150x150_35b4b15f.jpg'
-        },
-        {
-          id: '0004',
-          title: '颐和园',
-          min_price: 41,
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/d2/d274c92de14c93da.water.jpg_150x150_2747e538.jpg'
-        },
-        {
-          id: '0005',
-          title: '水立方',
-          min_price: 14,
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1501/40/40b2b6c951b28fdd.water.jpg_150x150_8a63d940.jpg'
-        },
-        {
-          id: '0006',
-          title: '圆明园',
-          min_price: 9.8,
-          imgUrl: 'http://img1.qunarzz.com/sight/p0/1505/f5/f5f45e1a83537bcb.water.jpg_150x150_2a3c9117.jpg'
-        }
-      ]
-    }
+  props: {
+    hot_sale: Array
   },
   methods: {
     medal (index) {
@@ -85,6 +46,7 @@ export default {
 
 <style lang="stylus" scoped>
   @import "~@css/variable.styl"
+  @import "~@css/mixin.styl"
   .home-rank
     margin-top $marginTop
     background #fff
@@ -124,6 +86,8 @@ export default {
           width 2rem
           height 2rem
         .title
+          ellipse()
+          width 2rem
           margin-top .1rem
           color #333
           font-size .24rem
