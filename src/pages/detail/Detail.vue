@@ -4,6 +4,7 @@
     <detail-banner></detail-banner>
     <detail-info></detail-info>
     <detail-recommend></detail-recommend>
+    <detai-ticket></detai-ticket>
     <div style="height: 30rem"></div>
   </div>
 </template>
@@ -13,13 +14,15 @@ import DetailHeader from './components/DetailHeader'
 import DetailBanner from './components/DetailBanner'
 import DetailInfo from './components/DetailInfo'
 import DetailRecommend from './components/DetailRecommend'
+import DetaiTicket from './components/DetaiTicket'
 export default {
   name: 'Detail',
   components: {
     DetailHeader,
     DetailBanner,
     DetailInfo,
-    DetailRecommend
+    DetailRecommend,
+    DetaiTicket
   }
 }
 </script>
